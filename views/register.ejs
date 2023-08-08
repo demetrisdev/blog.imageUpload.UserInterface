@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Authors | Register</title>
+</head>
+<body>
+    <h1 class="h1 m-3 display-5">Register</h1>
+    <div id="success-message" class="alert m-3 mt-4 alert-success" style="display:none; width: fit-content;">
+        Successful registration! Thank you for joining us!
+    </div>
+    <form action="/users/register" method="post">
+        <div>
+            <label class="m-3 mb-0 display-10" for="name">Name and Surname</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label class="m-3 mt-3 display-10" for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button class="m-3 btn btn-primary" type="submit" onclick="showMessage()">Register</button>
+    </form>
+    <a  class="m-3 btn btn-secondary" href="/users/login">Login</a>
+    <a  class="m-3 display-10 btn btn-danger" href="/">Back to the Blog</a>
+
+    <script>
+        function showMessage() {
+            document.getElementById("success-message").style.display = "block";
+            setTimeout(() => {
+                window.location.href = "/users/login";
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
